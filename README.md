@@ -1,10 +1,5 @@
 # COM6104 Project Notebook / 课程项目：Moodle AI Agent（MCP Demo）
 
-- Notebook / 源文件: [COM6104_project.ipynb](../COM6104_project.ipynb)
-
-## 中文（Chinese）
-
-本文档由仓库根目录的 `COM6104_project.ipynb` 整理生成，适合作为 GitHub 上的说明文档。
 
 - 主题：基于 Model Context Protocol（MCP）标准的工具化 Agent 示例（使用虚拟 Moodle 数据 + 可选的 Ollama 总结模型）
 
@@ -137,6 +132,7 @@ Notebook 中读取了以下环境变量（虚拟数据模式下仅用于展示/�
     "course_id": 1
   }
 }
+<<<<<<< HEAD
 ```
 
 说明：Notebook 中的 MCP Server 示例实现会把工具结果包装为 MCP 风格的 `ToolResult`，并将结果序列化到 `content[0].text`（JSON 字符串）。另外，`moodle_tool` 的 `inputSchema` 示例里包含 `action` 字段，但当前 Notebook 的“注册方式”是把某个具体方法直接注册为工具（因此调用参数以该方法签名为准）。
@@ -159,12 +155,19 @@ Notebook 中读取了以下环境变量（虚拟数据模式下仅用于展示/�
 - 保留 Notebook 作为可运行演示：`COM6104_project.ipynb`
 - 使用本文档作为 GitHub 入口说明：`docs/COM6104_project_zh_en.md`
 - 如需进一步工程化，可把 Notebook 中的类拆分为包结构（例如 `src/mcp/`、`src/tools/`、`src/agent/`），再提供 `main.py` 作为统一入口
+=======
+
+>>>>>>> 0532dd0 (Update notebook and README)
 
 ---
 
 ## English
 
+<<<<<<< HEAD
 This document is a bilingual (ZH/EN) version derived from `COM6104_project.ipynb`, formatted for GitHub.
+=======
+This document is a bilingual (ZH/EN) version derived from `COM6104_project.ipynb`, formatted for GitHub README.
+>>>>>>> 0532dd0 (Update notebook and README)
 
 - Topic: A tool-augmented Agent demo aligned with the Model Context Protocol (MCP), using mock Moodle data and an optional Ollama-based summarizer.
 
@@ -297,6 +300,7 @@ Example request body (calls a method like `check_assignment_status(course_id=1)`
     "course_id": 1
   }
 }
+<<<<<<< HEAD
 ```
 
 Note: The notebook’s MCP server wraps the tool result into an MCP-style `ToolResult`, and serializes the JSON result into `content[0].text`. Also, while the example `inputSchema` for `moodle_tool` contains an `action` field, the notebook registers concrete methods as tools; the actual accepted arguments follow the registered method signature.
@@ -320,3 +324,5 @@ Possible fixes:
 - Use this bilingual doc as the GitHub entry: `docs/COM6104_project_zh_en.md`
 - If you want to productionize it, split notebook code into modules (e.g., `src/mcp/`, `src/tools/`, `src/agent/`) and provide a unified `main.py` entrypoint
 
+=======
+>>>>>>> 0532dd0 (Update notebook and README)
