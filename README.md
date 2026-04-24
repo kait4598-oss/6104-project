@@ -132,42 +132,11 @@ Notebook 中读取了以下环境变量（虚拟数据模式下仅用于展示/�
     "course_id": 1
   }
 }
-<<<<<<< HEAD
-```
 
-说明：Notebook 中的 MCP Server 示例实现会把工具结果包装为 MCP 风格的 `ToolResult`，并将结果序列化到 `content[0].text`（JSON 字符串）。另外，`moodle_tool` 的 `inputSchema` 示例里包含 `action` 字段，但当前 Notebook 的“注册方式”是把某个具体方法直接注册为工具（因此调用参数以该方法签名为准）。
-
-### 已知现象（来自 Notebook 测试输出）
-
-在“测试文件”部分，测试输出出现：
-
-- `Test 3: 总结工具 - 总结内容` 报错：`'tool'`
-
-原因（按 Notebook 当前实现推断）：测试断言了 `result["tool"] == "summary_tool"`，但运行时使用的 `summary_tool` 版本可能是 `SimpleSummaryTool`（降级/简化版本），其返回对象里没有 `tool` 字段。
-
-修复思路（任选其一）：
-
-- 让 `SimpleSummaryTool.summarize_content()` 返回结构中补齐 `tool: "summary_tool"`
-- 或调整测试断言，兼容不同实现的返回结构
-
-### 建议的仓库呈现方式
-
-- 保留 Notebook 作为可运行演示：`COM6104_project.ipynb`
-- 使用本文档作为 GitHub 入口说明：`docs/COM6104_project_zh_en.md`
-- 如需进一步工程化，可把 Notebook 中的类拆分为包结构（例如 `src/mcp/`、`src/tools/`、`src/agent/`），再提供 `main.py` 作为统一入口
-=======
-
->>>>>>> 0532dd0 (Update notebook and README)
 
 ---
 
 ## English
-
-<<<<<<< HEAD
-This document is a bilingual (ZH/EN) version derived from `COM6104_project.ipynb`, formatted for GitHub.
-=======
-This document is a bilingual (ZH/EN) version derived from `COM6104_project.ipynb`, formatted for GitHub README.
->>>>>>> 0532dd0 (Update notebook and README)
 
 - Topic: A tool-augmented Agent demo aligned with the Model Context Protocol (MCP), using mock Moodle data and an optional Ollama-based summarizer.
 
@@ -300,29 +269,4 @@ Example request body (calls a method like `check_assignment_status(course_id=1)`
     "course_id": 1
   }
 }
-<<<<<<< HEAD
-```
 
-Note: The notebook’s MCP server wraps the tool result into an MCP-style `ToolResult`, and serializes the JSON result into `content[0].text`. Also, while the example `inputSchema` for `moodle_tool` contains an `action` field, the notebook registers concrete methods as tools; the actual accepted arguments follow the registered method signature.
-
-### Known Behavior (From Notebook Test Output)
-
-In the “Test File” section, the output shows:
-
-- `Test 3: summary tool - summarize content` error: `'tool'`
-
-Likely cause: the test asserts `result["tool"] == "summary_tool"`, but the runtime `summary_tool` may be a simplified fallback (`SimpleSummaryTool`) that does not include a `tool` field in its return payload.
-
-Possible fixes:
-
-- Add `tool: "summary_tool"` to `SimpleSummaryTool.summarize_content()` output
-- Or relax/update the test assertion to accept both return formats
-
-### Suggested Repository Presentation
-
-- Keep the notebook as the runnable demo: `COM6104_project.ipynb`
-- Use this bilingual doc as the GitHub entry: `docs/COM6104_project_zh_en.md`
-- If you want to productionize it, split notebook code into modules (e.g., `src/mcp/`, `src/tools/`, `src/agent/`) and provide a unified `main.py` entrypoint
-
-=======
->>>>>>> 0532dd0 (Update notebook and README)
